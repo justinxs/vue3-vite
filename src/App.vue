@@ -4,9 +4,9 @@
 </template>
 
 <script setup lang="ts">
-import { userPlayerInit } from "@/stores/player";
+import { userPlayerInit } from "@/store/player";
 import { toRefs } from "vue";
-import { useHostStore } from "@/stores/host";
+import { useHostStore } from "@/store/host";
 import Host from "@/Host.vue";
 
 userPlayerInit();
