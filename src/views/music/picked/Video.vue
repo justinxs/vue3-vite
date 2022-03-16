@@ -9,18 +9,17 @@
 </template>
 
 <script setup lang="ts">
-
 import Title from "@/components/common/Title.vue";
-import {onMounted, toRefs} from "vue";
-import {useVideoStore} from "@/store/video";
+import { onMounted, toRefs } from "vue";
+import { useVideoStore } from "@/store/video";
 import CoverPlay from "@/components/common/CoverPlay.vue";
-import {useRouter} from "vue-router";
+import { useRouter } from "vue-router";
 
-const {personalizedPrivateContent} = toRefs(useVideoStore())
-const {getPersonalizedPrivateContent} = useVideoStore()
-const router = useRouter()
+const { personalizedPrivateContent } = toRefs(useVideoStore());
+const { getPersonalizedPrivateContent } = useVideoStore();
+const router = useRouter();
 onMounted(async () => {
-  await getPersonalizedPrivateContent()
+    await getPersonalizedPrivateContent();
 })
 
 </script>
