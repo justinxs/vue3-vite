@@ -55,7 +55,11 @@ const { videoGroup } = toRefs(useVideoStore());
 const { getVideoGroup } = useVideoStore();
 const videoList = ref<Video[]>([]);
 const getData = async () => {
-    videoList.value = await useVideoGroup();
+    try {
+        videoList.value = await useVideoGroup();
+    } catch (error) {
+        console.log(error)
+    }
 }
 
 onMounted(() => {

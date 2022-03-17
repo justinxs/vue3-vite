@@ -3,6 +3,9 @@ import axios, { type AxiosRequestConfig } from "axios";
 axios.defaults.baseURL = localStorage.getItem('BASE_URL')?.toString();
 axios.defaults.timeout = 20 * 1000;
 axios.defaults.maxBodyLength = 5 * 1024 * 1024;
+axios.defaults.validateStatus = status => {
+    return status >= 200 && status < 300; // default
+};
 
 axios.interceptors.request.use(
     (config: AxiosRequestConfig | any) => {
@@ -59,7 +62,7 @@ const http: Http = {
                     resolve(res.data);
                 })
                 .catch((err) => {
-                    reject(err.data);
+                    reject(err);
                 });
         });
     },
@@ -72,7 +75,7 @@ const http: Http = {
                     resolve(res.data);
                 })
                 .catch((err) => {
-                    reject(err.data);
+                    reject(err);
                 });
         });
     },
@@ -85,7 +88,7 @@ const http: Http = {
                     resolve(res.data);
                 })
                 .catch((err) => {
-                    reject(err.data);
+                    reject(err);
                 });
         });
     },
@@ -98,7 +101,7 @@ const http: Http = {
                     resolve(res.data);
                 })
                 .catch((err) => {
-                    reject(err.data);
+                    reject(err);
                 });
         });
     },
@@ -113,7 +116,7 @@ const http: Http = {
                     resolve(res.data);
                 })
                 .catch((err) => {
-                    reject(err.data);
+                    reject(err);
                 });
         });
     },
