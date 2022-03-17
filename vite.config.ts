@@ -5,9 +5,13 @@ import vueJsx from '@vitejs/plugin-vue-jsx';
 import AutoImport from 'unplugin-auto-import/vite';
 import Components from 'unplugin-vue-components/vite';
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers';
+import OptimizationPersist from 'vite-plugin-optimize-persist';
+import PkgConfig from 'vite-plugin-package-config';
 
 export default defineConfig({
     plugins: [
+        PkgConfig(),
+        OptimizationPersist(),
         vue(),
         vueJsx(),
         AutoImport({

@@ -22,11 +22,7 @@
 </template>
 
 <script setup lang="ts">
-
 import Menu from "@/components/layout/menu/Menu.vue";
 import Header from "@/components/layout/header/Header.vue";
 import Footer from "@/components/layout/footer/Footer.vue";
 </script>
-<style lang="scss">
-
-</style>
