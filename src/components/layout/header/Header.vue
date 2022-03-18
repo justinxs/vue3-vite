@@ -10,7 +10,7 @@
     <div class="flex items-center mr-5">
       <UserInfo class="mr-2"/>
       <IconPark :icon="Mail" :stroke-width="2" class="icon-button"/>
-      <IconPark :icon="Platte" :stroke-width="2" class="icon-button" @click="changeThemeMode()"/>
+      <IconPark :icon="Platte" :stroke-width="2" class="icon-button" @click="changeThemeMode($event, '')"/>
       <IconPark :icon="HamburgerButton" :stroke-width="2" class="icon-button"/>
     </div>
   </div>
@@ -52,7 +52,8 @@ const randomTheme = (last?: string) => {
 
     return lessList[Math.floor(lessList.length * Math.random())];
 }
-const changeThemeMode = (name?: string) => {
+const changeThemeMode = (event: Event, name?: string) => {
+    console.log(event.target);
     let lastTheme = currentTheme();
     name = name || randomTheme(lastTheme);
     if (name !== lastTheme) {
